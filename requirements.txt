@@ -1,0 +1,48 @@
+# =============================================================================
+# DentalPilot AI - Python 依赖
+# =============================================================================
+# 快速安装：pip install -r requirements.txt
+# 推荐：python -m venv venv && venv\Scripts\activate && pip install -r requirements.txt
+# =============================================================================
+
+# ----- 基础 Web 框架 -----
+gradio>=4.19.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.6.0
+python-dotenv>=1.0.1
+
+# ----- 深度学习核心 -----
+torch>=2.1.0
+torchvision>=0.16.0
+ultralytics>=8.1.0
+onnx>=1.15.0
+onnxruntime>=1.17.0
+
+# ----- 影像处理 -----
+pydicom>=2.4.0
+SimpleITK>=2.3.0
+Pillow>=10.2.0
+opencv-python>=4.9.0
+numpy>=1.26.0
+scipy>=1.12.0
+scikit-image>=0.22.0
+
+# ----- 大模型 API -----
+openai>=1.12.0          # DeepSeek/通义/Minimax 都用 OpenAI 兼容接口
+zhipuai>=2.0.0          # 智谱
+requests>=2.31.0
+httpx>=0.27.0
+
+# ----- 数据处理 -----
+pandas>=2.2.0
+pydantic-settings>=2.2.0
+
+# ----- 工具 -----
+tqdm>=4.66.0
+loguru>=0.7.2
+rich>=13.7.0
+
+# ----- 部署可选 -----
+docker>=7.0.0
+pyinstaller>=6.3.0

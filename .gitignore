@@ -1,0 +1,106 @@
+# =============================================================================
+# DentalPilot AI - .gitignore
+# =============================================================================
+# 防止敏感信息、模型权重、临时文件被提交到 Git
+
+# ----- 敏感信息 -----
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+api_keys.txt
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ----- 虚拟环境 -----
+venv/
+env/
+ENV/
+.venv/
+.env.bak/
+
+# ----- IDE -----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----- Jupyter -----
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# ----- 模型权重（很大，不进Git） -----
+models/*.pt
+models/*.onnx
+models/*.pth
+models/*.h5
+models/*.pkl
+models/*.bin
+runs/
+checkpoints/
+
+# ----- 数据（隐私） -----
+data/raw/
+data/uploads/
+data/patients/
+data/dicom/
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.stl
+*.obj
+*.ply
+
+# ----- 日志 -----
+logs/
+*.log
+logs/*.log
+
+# ----- 临时文件 -----
+tmp/
+temp/
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ----- 输出 -----
+outputs/
+results/
+predictions/
+annotations/
+
+# ----- Gradio / 部署 -----
+.gradio/
+flagged/
+gradio_cached_examples/
+*.tmp

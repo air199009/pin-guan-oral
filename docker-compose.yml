@@ -1,0 +1,27 @@
+# =============================================================================
+# DentalPilot AI - Docker Compose
+# =============================================================================
+version: "3.8"
+
+services:
+  dentalpilot:
+    build: .
+    container_name: dentalpilot
+    restart: unless-stopped
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./models:/app/models
+      - ./data/uploads:/app/data/uploads
+      - ./data/feedback.jsonl:/app/data/feedback.jsonl
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+      - ./.env:/app/.env:ro
+    environment:
+      - GRADIO_HOST=0.0.0.0
+      - GRADIO_PORT=7860
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
